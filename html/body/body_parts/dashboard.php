@@ -1,0 +1,47 @@
+<?php
+	class Dashboard{
+		private $dashboard = '';
+		private $lang = '';
+
+		public function Dashboard($des_list){
+			$this->lang = $des_list['lang'];
+			$this->dashboard = '<div class="content-wrapper">
+			<section class="content-header">
+				<h1>'.$this->lang['dashboard'].'</h1>
+			</section>
+			<section class="content">
+				<div class="row">
+					<section class="col-lg-12 connectedSortable">
+						<div class="box box-info">
+							<div class="box-header">
+								<h3 class="box-title">'.$this->lang['re_admission'].'</h3>
+								<div class="pull-right box-tools">
+									<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="'.$this->lang['remove'].'">
+										<i class="fa fa-times"></i>
+									</button>
+								</div>
+							</div>
+						<div class="box-body">
+						<form id="readmission" action="" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control" name="regno" placeholder="'.$this->lang['reg_no'].':" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="acyr" placeholder="'.$this->lang['ac_year'].':" required>
+						</div>
+							<button type="submit" class="pull-right btn btn-default" id="submit">'.$this->lang['submit'].'</button>
+						</form>
+						</div>
+						<!--<div class="box-footer clearfix"></div>-->
+					</div>
+				</section>
+			</div>
+		</section>
+		<section class="content stu_info" id="stu_info"></section></div>';
+		}
+
+		public function getDashboard(){
+			return $this->dashboard;
+		}
+	}
+?>
